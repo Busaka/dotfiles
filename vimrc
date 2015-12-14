@@ -142,6 +142,11 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <space>u :Unite file_rec<cr>
 nnoremap <space>ub :Unite buffer<cr>
 
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Ag mappings
 nnoremap <leader>a :Ag 
@@ -224,3 +229,14 @@ nnoremap <leader>q :q!<cr>
 nnoremap <leader>o :only<cr>
 inoremap jj <C-[>
 nnoremap <leader>c <C-w>c
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
