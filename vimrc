@@ -48,7 +48,9 @@ NeoBundle 'Shougo/vimproc.vim', {
     NeoBundle 'scrooloose/nerdcommenter'
 
     NeoBundle 'SirVer/ultisnips'
+    NeoBundle 'tmhedberg/matchit'
     NeoBundle 'Shougo/neosnippet'
+    NeoBundle 'Shougo/neocomplete.vim'
     NeoBundle 'Shougo/neomru.vim'
     NeoBundle 'Shougo/neosnippet-snippets'
     NeoBundle 'tpope/vim-obsession'
@@ -58,21 +60,17 @@ NeoBundle 'Shougo/vimproc.vim', {
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'mileszs/ack.vim'
 
-    " NeoBundle 'SirVer/ultisnips'
-
-    NeoBundle 'shawncplus/phpcomplete.vim'
-    NeoBundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-    NeoBundle 'vim-scripts/taglist.vim'
+    " NeoBundle 'vim-scripts/taglist.vim'
     NeoBundle 'scrooloose/nerdtree'
     NeoBundle 'jistr/vim-nerdtree-tabs'
-    NeoBundle 'majutsushi/tagbar'
+    " NeoBundle 'majutsushi/tagbar'
     NeoBundle 'sukima/xmledit'
-    " NeoBundle 'vim-scripts/guicolorscheme.vim'
     " NeoBundle 'noahfrederick/Hemisu'
     " NeoBundle 'tpope/vim-vividchalk'
     "
     NeoBundle 'scrooloose/syntastic.git'
-    NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
+    " NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
+    " NeoBundle 'rdnetto/YCM-Generator'
 
 
  
@@ -82,6 +80,9 @@ NeoBundle 'Shougo/vimproc.vim', {
  " Note: You don't set neobundle setting in .gvimrc!
 
  call neobundle#end()
+
+ " Required:
+ filetype  off
 
  " Required:
  filetype plugin indent on
@@ -99,6 +100,28 @@ nnoremap <leader>d :NERDTree<cr>
 nnoremap <leader>dd :NERDTreeToggle<cr>
 " }}}
 "
+
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<C-b>'
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_confirm_extra_conf = 0
+map <C-]> :YcmCompleter GoToImprecise<CR>
+
+
+
+" UltiSnips setup
+let g:UltiSnipsExpandTrigger='<c-k>'
+let g:UltiSnipsJumpForwardTrigger='<c-k>'
+let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
+let g:UltiSnipsSnippetsDir='~/.vim/bundle/vim-snippets/UltiSnips'
+" let g:UltiSnipsSnippetDirectories=["snippets"]
+
+
+
+
 " Airline {{{
 "
 set laststatus=2
@@ -139,8 +162,9 @@ nnoremap <F5> :GundoToggle<CR>
 
 
 " Unite mappings
-nnoremap <space>u :Unite file_rec<cr>
-nnoremap <space>ub :Unite buffer<cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <space>b :<C-u>Unite -start-insert buffer<CR>
+nnoremap <space>f :<C-u>Unite -start-insert file_rec/async:!<CR>
 
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
@@ -161,7 +185,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Colors {{{
 syntax enable " enable syntax processing
 colorscheme badwolf
-set background=light
+set background=dark
 " }}}
 " Misc {{{
 set ttyfast " faster redraw
@@ -173,7 +197,6 @@ set expandtab " use spaces for tabs
 set softtabstop=4 " 4 space tab
 set shiftwidth=4
 set modelines=1
-filetype indent on
 filetype plugin on
 set autoindent
 " }}}
@@ -226,6 +249,7 @@ inoremap <leader>w <ESC>:w<cr>
 nnoremap <leader>ww :wq!<cr>
 inoremap <leader>ww <ESC>:wq!<cr>
 nnoremap <leader>q :q!<cr>
+inoremap <leader>qq <ESC>:q!<cr>
 nnoremap <leader>o :only<cr>
 inoremap jj <C-[>
 nnoremap <leader>c <C-w>c
