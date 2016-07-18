@@ -1,29 +1,55 @@
-/* Appearance */
+
 Xft*dpi:       96
 Xft*antialias: True
 Xft*hinting:   Full
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
 urxvt.termName: rxvt-unicode
-urxvt.scrollBar: false
 URxvt.depth:                32
 URxvt.geometry:             81x24
 URxvt.transparent:          false
 URxvt.fading:               40
-URxvt.loginShell:           true
-URxvt.saveLines:            50
 URxvt.lineSpace:            0
 
+
+!Misc. settings, tired of explaining and talking to myself
+URxvt.imLocale: en_US.UTF-8
+URxvt.saveLines: 512
+URxvt.colorBD: #857672
+URxvt.colorIT: #bbbbbb
+URxvt.cursorBlink: true
+URxvt.cursorColor: #ff8939
+URxvt.cursorColor2: #121212
+
+
+! cause shell to be started as login shell
+URxvt*loginShell: true
+
+! do not scroll with output
+ URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+!  turn off scrollbar
+URxvt.scrollBar: false
+
+
 /* Font prefferenes */
-urxvt.font: xft:DejaVu Sans Mono:pixelsize=14
-urxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=14:weight=bold
+urxvt.font: xft:DejaVu Sans Mono:pixelsize=13
+urxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=13:weight=bold
 urxvt.letterSpace: -1
 
 /* Larger history limit */
 urxvt.saveLines: 1000000
 
 !-*- Perl extensions -*-
-URxvt.perl-ext-common:default,clipboard,matcher,url-select,keyboard-select
+URxvt.perl-ext-common:default,clipboard,url-select,keyboard-select
 URxvt.keysym.M-u:     perl:url-select:select_next
-URxvt.url-select.launcher:   /usr/bin/palemoon
+URxvt.url-select.launcher:   /usr/bin/google-chrome-stable
 URxvt.underlineURLs:  True
 URxvt.keysym.M-Escape:perl:keyboard-select:activate
 URxvt.keysym.M-c:     perl:clipboard:copy
@@ -38,32 +64,38 @@ URxvt.clipboard.autocopy: true
 URxvt.keysym.Control-0x2b: perl:font-size:increase
 URxvt.keysym.Control-0x2d: perl:font-size:decrease
 
+!  special
+*foreground:   #ffffff
+*background:   #172637
 
-*background: #251f1f
-*foreground: #c8c8c8
- 
-!black
-/* *color0:  #251f1f */
-/* *color8:  #5e5e5e */
-!red
-/* *color1:  #eb4509 */
-/* *color9:  #eb4509 */
-!green
-/* *color2:  #94e76b */
-/* *color10: #95e76b */
-!yellow
-/* *color3:  #ffac18 */
-/* *color11: #ffac18 */
-!blue
-/* *color4:  #46aede */
-/* *color12: #46aede */
-!magenta
-/* *color5:  #e32c57 */
-/* *color13: #e32c57 */
-!cyan
-/* *color6:  #d6dbac */
-/* *color14: #d6dbac */
-!white
-/* *color7:  #efefef */
-/* *color15: #efefef */
+! black
+*color0:       #131313
+*color8:       #4b4b4b
 
+! red
+*color1:       #c44949
+*color9:       #ed6b6b
+
+! green
+*color2:       #76c449
+*color10:      #aced6b
+
+! yellow
+*color3:       #c49749
+*color11:      #edb76b
+
+! blue
+*color4:       #4976c4
+*color12:      #6ba1ed
+
+! magenta
+*color5:       #c449c4
+*color13:      #ed6bed
+
+! cyan
+*color6:       #49bac4
+*color14:      #6be2ed
+
+! white
+*color7:       #cfcfcf
+*color15:      #ffffff
