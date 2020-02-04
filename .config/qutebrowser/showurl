@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+notify-send -a "qutebrowser" "$QUTE_URL"

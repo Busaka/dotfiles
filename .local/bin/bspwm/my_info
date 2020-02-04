@@ -1,0 +1,42 @@
+ActiveWindow(){
+	echo -n $(xdotool getwindowfocus getwindowname)
+}
+
+Clock(){
+    DATETIME=$(date "+%a %-d %b, %-l:%M %p")
+    echo -e -n "${DATETIME}"
+}
+
+
+Cpu(){
+    c=$(top -bn1 | grep "Cpu(s)" | \
+           sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
+           awk '{print 100 - $1}')
+    line="    "
+    printf "${line:${#c}}""%s %s" $c%
+
+
+}
+
+Memory(){
+     mem=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
+     memp=${mem:0:-2}%
+     line="       "
+     printf "${line:${#memp}}""%s %s" $memp
+}
+
+Sound(){
+    volStatus=$(amixer get Master | tail -n 1 | cut -d '[' -f 4 | sed 's/].*//g')
+        volLevel=$(amixer get Master | tail -n 1 | cut -d '[' -f 2 | sed 's/%.*//g')
+        # is alsa muted or not muted?
+        if [ "$volStatus" == "on" ]
+        then
+                #echo "%{Fyellowgreen} $volLevel %{F-}"
+                echo "%{A:st -e 'pulsemixer':} $volLevel %{A}"
+        else
+                # If it is muted, make the font red
+                #echo "%{Findianred} $volLevel %{F-}"
+                echo "%{A:st -e 'pulsemixer':} $volLevel %{A}"
+        fi
+}
+
