@@ -140,6 +140,7 @@ alias -g pir='pip install -r'
 alias -g pf='pip freeze'
 alias -g sw=' ssh lxbusaka@lxbusaka.webfactional.com'
 
+alias -g trr='tremc'                          # human-readable sizes
 alias -g df='df -h'                          # human-readable sizes
 alias -g free='free -m'                      # show sizes in MB
 alias -g printer='system-config-printer'
