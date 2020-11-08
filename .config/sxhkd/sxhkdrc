@@ -22,7 +22,7 @@ super + shift + Escape
 #	kill -9 `xdotool getwindowfocus getwindowpid`
 
 #kill focused window
-super + shift + k
+super + shift + q
 	kill -9 `xdotool getwindowfocus windowkill`
 
 super + Return
@@ -32,6 +32,9 @@ super + Return
 super + d
 	dmenu_run
 super + F2
+	pcmanfm
+
+XF86Explorer
 	pcmanfm
 #super + e
 #	$TERMINAL -e neomutt; pkill -RTMIN+12 $STATUSBAR
@@ -75,10 +78,12 @@ XF86MonBrightnessUp
 # Recording
 # Take screenshot
 Print
-	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
+    maimpick
+	
 # Pick screenshot type
 shift + Print
-	maimpick
+    maimselect
+	
 # Print: Record audio or video; Del: kill recording
 super + Print
 	dmenurecord
@@ -97,11 +102,11 @@ super + shift + p
 #super + shift + less
 #	mpc seek 0%
 # Seek foward in song
-#super + {_,shift +} bracketright
-#	mpc seek +{10,120}
+super + {_,shift +} bracketright
+	mpc seek +{10,120}
 # Seek backward in song
-#super + {_,shift +} bracketleft
-#	mpc seek -{10,120}
+super + {_,shift +} bracketleft
+	mpc seek -{10,120}
 # Increase volume
 #super {_,shift +} + plus
 #	amixer sset Master {5,15}%+; pkill -RTMIN+10 $STATUSBAR

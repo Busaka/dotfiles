@@ -63,8 +63,6 @@ endif
 " Enable backspace delete indent and newline.
 set backspace=indent,eol,start
 
-" Highlight <>.
-set matchpairs+=<:>
 
 " Display another buffer when current buffer isn't saved.
 set hidden
@@ -74,8 +72,11 @@ set number " show line numbers
 set relativenumber " show relative line numbers
 set showcmd " show command in bottom bar
 "set nocursorline " highlight current line
-"set cursorline
+set cursorline
 set showmatch " higlight matching parenthesis
+
+" Highlight <>.
+set matchpairs+=<:>
 " Search home directory path on cd.
 " But can't complete.
 "  set cdpath+=~
@@ -332,3 +333,7 @@ endif
 
 " Cursor motion
 set scrolloff=3
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=50

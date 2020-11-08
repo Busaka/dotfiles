@@ -7,8 +7,9 @@ c.auto_save.session = True
 c.completion.cmd_history_max_items = 1000
 c.completion.scrollbar.padding = 0
 c.content.headers.accept_language = "en-GB,en,en-US"
-c.content.notifications = "ask"
-c.content.user_stylesheets = ["style.css"]
+c.content.notifications = True 
+c.content.user_stylesheets = ["style2.css"]
+# config.set("colors.webpage.darkmode.enabled", True)
 c.downloads.open_dispatcher = "xdg-open"
 c.downloads.position = "bottom"
 c.input.insert_mode.auto_load = False
@@ -39,11 +40,13 @@ c.content.ssl_strict = True
 #c.downloads.remove_finished = 800
 c.hints.dictionary = "/usr/share/dict/british"
 c.url.searchengines = {"DEFAULT": "https://google.com/search?&q={}",
-"dd": "https://www.duckduck.com/?q={}",
+"dd": "https://www.duckduckgo.com/?q={}",
+"ddi": "https://duckduckgo.com/?q={}&iar=images",
 "ggi": "https://www.google.co.uk/search?q={}&tbm=isch",
 "w": "https://en.wikipedia.org/w/index.php?search={}",
 "st": "http://store.steampowered.com/search/?term={}",
-"g": "https://duckduckgo.com/?q={}",
+"g": "https://www.google.com/search?q={}",
+"gi": "https://www.google.com/search?q={}&tbm=isch",
 "mw": "http://en.uesp.net/w/index.php?title=Special%3ASearch&search={}",
 "aur": "https://aur.archlinux.org/packages/?O=0&K={}",
 "pac": "https://www.archlinux.org/packages/?sort=&arch=x86_64&maintainer=&flagged=&q={}",
@@ -57,14 +60,13 @@ c.url.searchengines = {"DEFAULT": "https://google.com/search?&q={}",
 "r": "https://www.reddit.com/r/{}/new/",
 "it": "https://itch.io/search?q={}",
 "tpb": "https://thepiratebay.org/search/{}/0/7/0",
-"gi": "https://duckduckgo.com/?q={}&iar=images",
 "p": "https://www.protondb.com/search?q={}",
 "a": "https://www.amazon.co.uk/s/?url=search-alias&field-keywords={}"}
 c.completion.open_categories = ["quickmarks", "bookmarks", "history"]
 # ads
 c.content.host_blocking.enabled = True
 c.content.host_blocking.lists.append("http://sbc.io/hosts/hosts")
-c.content.host_blocking.whitelist = ["thepiratebay.org"]
+c.content.host_blocking.whitelist = ["thepiratebay.org", "www.bet365.com"]
 
 # zoom
 
@@ -141,27 +143,19 @@ c.colors.prompts.fg = xresources['*.foreground']
 c.colors.prompts.bg = xresources['*.color4']
 c.colors.prompts.selected.bg = xresources['*.color12']
 
-# fonts
-
-c.fonts.monospace = "Fira Code"
-c.fonts.web.family.fixed = c.fonts.monospace
-c.fonts.web.family.sans_serif = "Noto Sans"
-c.fonts.web.family.serif = c.fonts.web.family.sans_serif
-c.fonts.web.family.standard = c.fonts.web.family.sans_serif
-
-
 # keys
 
-config.bind('<Ctrl-Shift-m>', 'spawn --detach mpv --force-window yes {url}')
-# config.bind('<Ctrl-Shift-m>', 'spawn --detach mpv --force-window yes --ytdl-format=best[height=360] {url}')
+#config.bind('<Ctrl-Shift-m>', 'spawn --detach mpv --force-window yes {url}')
+# config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes --ytdl-format=160+249 {url}')
+config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes {url}')
 config.bind('<Ctrl-Shift-p>', 'spawn --userscript password_fill')
 config.bind('z', 'download-open')
-config.bind('xx', 'set tabs.show always;; later 50000 set tabs.show never')
-config.bind('xb', 'config-cycle statusbar.hide')
+config.bind('xx', 'config-cycle tabs.show switching always')
+config.bind('xb', 'config-cycle statusbar.show in-mode always')
 config.bind('tg', 'tab-give')
 config.unbind('q')
 config.unbind('<Ctrl-v>')
-config.bind('<Ctrl-y>', 'hint links spawn --detach mpv --force-window yes --ytdl-format=best[height=360] {hint-url}')
+config.bind('<Ctrl-y>', 'hint links spawn --detach mpv --force-window yes {hint-url}')
 
 # Dealing with login forms
 config.bind('<,><l>', 'spawn --userscript qute-pass')

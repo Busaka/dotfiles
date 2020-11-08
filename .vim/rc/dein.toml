@@ -65,6 +65,9 @@ build = './install.sh'
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'vim-syntastic/syntastic'
 
 [[plugins]]
@@ -72,3 +75,10 @@ repo = 'sainnhe/gruvbox-material'
 
 [[plugins]]
 repo = 'jremmen/vim-ripgrep'
+
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'stsewd/fzf-checkout.vim'

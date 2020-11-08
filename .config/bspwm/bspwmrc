@@ -50,17 +50,14 @@ bspc config pointer_modifier shift
 
 
 # RULES
-
-# dropdownname="dropdown"
-# bspc query -N -n .hidden >/dev/null || setsid $TERMINAL -n "$dropdownname" -e dropdown >/dev/null 2>&1 &
-# bspc rule -a St:$dropdownname hidden=on
-# bspc rule -a St:$dropdownname sticky=on
-# bspc rule -a St:$dropdownname state=floating
-
 bspc rule -a St follow=on desktop='^1'
 bspc rule -a qutebrowser follow=on desktop='^2'
 bspc rule -a Pcmanfm desktop='^3'
-bspc rule -a mpv state=floating follow=on sticky=on
+bspc rule -a xed desktop='^4'
+bspc rule -a sxiv desktop='^5'
+bspc rule -a feh desktop='^5'
+bspc rule -a brave-beta desktop='^6'
+bspc rule -a mpv state=floating rectangle=620x350+250+625 follow=on sticky=on
 #bspc rule -a Steam desktop='^7' state=tiled follow=off
 #bspc rulw -a Spotify:spotify desktop='^2' state=tiled follow=off
 #bspc rule -a Discord desktop='^8'
@@ -74,8 +71,7 @@ bspc config external_rules_command $(which bspwm_rules)
 
 _check  sxhkd && sxhkd -c "$HOME"/.config/sxhkd/sxhkdrc{,_bspc} &
 
-[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
-#pgrep -x panel > /dev/null || panel &
+# [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
 # Launch my custom Lemonbar implementation (the system panel).
 if _check panel; then
 	# Make sure we have no running instances

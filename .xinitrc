@@ -21,11 +21,12 @@ fi
 #xset fp rehash
 #xset -b # disable bell
 
-#SSH_ENV=$HOME/.ssh/environment
-#ssh-agent | grep -v echo > ${SSH_ENV}
-#chmod 600 ${SSH_ENV}
-#. ${SSH_ENV} > /dev/null
-
+# eval "$(ssh-agent -s)"
+# SSH_ENV=$HOME/.ssh/environment
+# ssh-agent | grep -v echo > ${SSH_ENV}
+# chmod 600 ${SSH_ENV}
+# . ${SSH_ENV} > /dev/null
+#
 
 # https://wiki.archlinux.org/index.php/Display_Power_Management_Signaling#Prevent_screen_from_turning_off
 #xset -dpms
@@ -59,6 +60,7 @@ fi
 #	sleep 2
 #done &
 
+export LIBGL_ALWAYS_SOFTWARE=1
 #xautolock -time 10 -locker slock &
 #xss-lock -- /usr/bin/slock &
 
@@ -78,4 +80,4 @@ mpdupdate &
 # sxhkd &
 xrdb -load ~/.Xresources &
 # ( sleep 1s && zsh /home/ll/.local/bin/tools/lemonbar1.sh | lemonbar -p -F#FFFFFFFF -B#FF222222 -f "DejaVu Sans Mono"-8 -f FontAwesome-8) &
-exec  bspwm
+exec  bspwm 2>~/.bspwmrc.err

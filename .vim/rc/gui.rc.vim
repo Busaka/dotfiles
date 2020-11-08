@@ -60,7 +60,8 @@ endif
 
 " Don't override colorscheme.
 if !exists('g:colors_name')
-  colorscheme candy
+  " colorscheme candy
+  colorscheme gruvbox-material
 endif
 
 "---------------------------------------------------------------------------

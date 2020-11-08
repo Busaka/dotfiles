@@ -25,9 +25,9 @@
 # working with light themes.  Adjustments to these values have no effect
 # if a program such as `redshift' is running.
 _mydesktop() {
-	# xrandr --output VGA-1 --primary --mode 1280x1024 --pos 0x0
+	xrandr --output VGA-1 --primary --mode 1280x1024 --pos 0x0
 	#xrandr --output VGA-1 --primary --mode 1440x900 --pos 0x0
-	xrandr --output VGA-1 --primary  --pos 0x0
+	# xrandr --output VGA-1 --primary  --pos 0x0 --rotate right
 }
 
 _laptop() {

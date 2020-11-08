@@ -172,9 +172,9 @@ hook_add = '''
   \ -cursor-pos=`tabpagenr()-1` deol:zsh<CR>
   nnoremap <silent> <C-k> :<C-u>Denite change jump<CR>
   nnoremap <silent> <C-h> :<C-u>DeniteCursorWord help<CR>
-  nnoremap <silent> [Space]f :<C-u>Denite file/rec<CR>
+  " nnoremap <silent> [Space]f :<C-u>Denite file/rec<CR>
   nnoremap <silent> [Space]b :<C-u>Denite buffer<CR>
-  nnoremap <silent> [Space]gs :<C-u>Denite gitstatus<CR>
+  " nnoremap <silent> [Space]gs :<C-u>Denite gitstatus<CR>
 
   nnoremap <silent> ;;
         \ :<C-u>Denite command command_history<CR>
@@ -216,7 +216,7 @@ hook_add = '''
   nnoremap <silent> N :<C-u>call deol#new(
   \ {'command': 'zsh', 'start_insert': 0})<CR>
   " nnoremap <silent> [Space]s :<C-u>Deol xonsh<CR>
-  nnoremap <silent> [Window]D  :<C-u>call deol#kill_editor()<CR>
+  nnoremap <silent> [Space]D  :<C-u>call deol#kill_editor()<CR>
 '''
 hook_source = '''
   let g:deol#prompt_pattern = '\w*% '
@@ -265,7 +265,7 @@ nmap <buffer> i <Plug>(deol_edit)
 repo = 'Shougo/junkfile.vim'
 on_source = 'denite.nvim'
 hook_add = '''
-  nnoremap <silent> [Window]e :<C-u>Denite junkfile:new junkfile<CR>
+  nnoremap <silent> <leader>e :<C-u>Denite junkfile:new junkfile<CR>
 '''
 
 [[plugins]]
@@ -396,9 +396,9 @@ repo = 'rhysd/vim-operator-surround'
 depends = 'vim-operator-user'
 on_map = {n = '<Plug>'}
 hook_add = '''
-  nmap <silent>sa <Plug>(operator-surround-append)a
-  nmap <silent>sd <Plug>(operator-surround-delete)a
-  nmap <silent>sr <Plug>(operator-surround-replace)a
+  nmap <silent><Space>aa <Plug>(operator-surround-append)
+  nmap <silent><Space>ad <Plug>(operator-surround-delete)
+  nmap <silent><Space>ar <Plug>(operator-surround-replace)
   nmap <silent>sc <Plug>(operator-surround-replace)a
 '''
 
@@ -414,6 +414,9 @@ hook_add = '''
 repo = 'kannokanno/previm'
 on_cmd = 'PrevimOpen'
 depends = 'open-browser.vim'
+hook_source = '''
+  let g:previm_open_cmd = 'open -a qutebrowser'
+'''
 
 [[plugins]]
 repo = 'osyo-manga/vim-jplus'
@@ -519,4 +522,16 @@ repo = 'dag/vim2hs'
 on_ft = 'haskell'
 hook_source = '''
 let g:haskell_conceal = 0
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+on_cmd = 'FZF'
+hook_add = '''
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+nnoremap <silent> <Space>f :Files<Space>
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>L        :Lines<CR>
+nnoremap <silent> q/ :History/<CR>
 '''

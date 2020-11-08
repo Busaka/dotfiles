@@ -6,25 +6,7 @@
 
 config_version: 2
 settings:
-  content.autoplay:
-    global: false
-  content.host_blocking.enabled:
-    global: true
-  content.javascript.enabled:
-    global: true
-  content.notifications:
-    https://1337x.to: true
-    https://mpasho.co.ke: true
-    https://www.facebook.com: true
-    https://www.reddit.com: true
-    https://www.smithsonianmag.com: true
-  content.ssl_strict:
-    global: true
-  scrolling.smooth:
-    global: true
-  statusbar.hide:
-    global: true
-  tabs.position:
-    global: top
+  statusbar.show:
+    global: in-mode
   tabs.show:
-    global: never
+    global: always

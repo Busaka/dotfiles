@@ -68,3 +68,56 @@ Dec 16 09:52 : exception: RTIOThread could not get realtime scheduling, continui
 Dec 29 18:53 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
 Dec 29 18:53 : exception: inotify_add_watch() has failed: No such file or directory
 Dec 29 18:53 : client: [0] opened from 127.0.0.1:57266
+Jul 02 22:42 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 22:42 : exception: inotify_add_watch() has failed: No such file or directory
+Jul 02 22:51 : exception: inotify_add_watch() has failed: No such file or directory
+Jul 02 22:51 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 22:52 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 22:52 : client: [0] opened from 127.0.0.1:43840
+Jul 02 22:52 : client: [0] closed
+Jul 02 22:52 : update: added /[Kenyan Throwback Edition] - East african Overdose Mix Vol 4 - Dj Shinski-IM9vSMtWGmU.m4a
+Jul 02 22:53 : client: [1] opened from 127.0.0.1:43976
+Jul 02 22:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 22:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 22:54 : client: [1] closed
+Jul 02 22:54 : client: [2] opened from 127.0.0.1:44798
+Jul 02 22:54 : client: [2] closed
+Jul 02 22:57 : client: [3] opened from 127.0.0.1:46206
+Jul 02 23:00 : client: [3] closed
+Jul 02 23:00 : client: [4] opened from 127.0.0.1:47360
+Jul 02 23:00 : client: [4] closed
+Jul 02 23:06 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 23:06 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 23:06 : client: [0] opened from 127.0.0.1:50576
+Jul 02 23:06 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 02 23:07 : client: [0] closed
+Jul 02 23:08 : client: [1] opened from 127.0.0.1:51540
+Jul 02 23:09 : client: [1] closed
+Jul 08 08:55 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 08 08:55 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 08 08:55 : client: [0] opened from 127.0.0.1:33432
+Jul 08 08:55 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 08 08:56 : client: [0] closed
+Jul 08 08:57 : client: [1] opened from 127.0.0.1:33436
+Jul 08 09:12 : client: [2] opened from 127.0.0.1:33440
+Jul 08 09:12 : client: [2] closed
+Jul 08 09:12 : client: [3] opened from 127.0.0.1:33444
+Jul 08 09:12 : client: [3] closed
+Jul 08 09:12 : client: [4] opened from 127.0.0.1:33448
+Jul 08 09:12 : client: [4] closed
+Jul 08 09:12 : client: [5] opened from 127.0.0.1:33452
+Jul 08 09:12 : client: [5] closed
+Jul 08 09:12 : client: [6] opened from 127.0.0.1:33456
+Jul 08 09:12 : client: [6] closed
+Jul 08 09:12 : client: [7] opened from 127.0.0.1:33460
+Jul 08 09:12 : client: [7] closed
+Jul 08 09:33 : client: [1] closed
+Jul 08 09:36 : player: played "[Kenyan Throwback Edition] - East african Overdose Mix Vol 4 - Dj Shinski-IM9vSMtWGmU.m4a"
+Jul 28 13:36 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 28 13:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 28 13:36 : client: [0] opened from 127.0.0.1:55678
+Jul 28 13:36 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jul 28 13:37 : client: [0] closed
+Jul 28 14:56 : player: played "[Kenyan Throwback Edition] - East african Overdose Mix Vol 4 - Dj Shinski-IM9vSMtWGmU.m4a"
+Jul 28 15:35 : client: [1] opened from 127.0.0.1:55682
+Jul 28 15:35 : client: [1] closed

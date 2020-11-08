@@ -72,9 +72,16 @@ nnoremap <Leader><Leader> :<C-u>update<CR>
 nnoremap    [Window]   <Nop>
 nmap    s [Window]
 nnoremap <silent> [Window]p  :<C-u>vsplit<CR>:wincmd w<CR>
+nnoremap <silent> [Window]v  :<C-u>split<CR>:wincmd w<CR>
 nnoremap <silent> [Window]o  :<C-u>only<CR>
+" nnoremap <silent> <leader>c  :<C-u>close<CR>:wincmd w<CR>
+nnoremap <silent> <leader>c  :wincmd c<CR>
 nnoremap <silent> <Tab>      :wincmd w<CR>
-nnoremap <silent><expr> q winnr('$') != 1 ? ':<C-u>close<CR>' : ""
+" nnoremap <silent><expr> sq winnr('$') != 1 ? ':<C-u>close<CR>' : ""
+
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>rp :resize 100<CR>
 
 " Better x
 nnoremap x "_x
@@ -110,7 +117,7 @@ xnoremap s :s//g<Left><Left>
 
 " Sticky shift in English keyboard.
 " Sticky key.
-inoremap <expr> ;  vimrc#sticky_func()
+" inoremap <expr> ;  vimrc#sticky_func()
 cnoremap <expr> ;  vimrc#sticky_func()
 snoremap <expr> ;  vimrc#sticky_func()
 
@@ -159,13 +166,13 @@ command! WordCount echo strchars(join(getline(1, '$')))
 "nnoremap <leader>w :w<cr>
 "nnoremap <Tab> <c-w>w 
 "inoremap <leader>w <ESC>:w<cr>
-"nnoremap <leader>ww :wq!<cr>
+nnoremap <leader>ww :wq<cr>
 "inoremap <leader>ww <ESC>:wq!<cr>
 nnoremap <leader>q :q!<cr>
 inoremap <leader>qq <ESC>:q!<cr>
-nnoremap <leader>o :only<cr>
+" nnoremap <leader>o :only<cr>
 inoremap jj <C-[>
-nnoremap <leader>c <C-w>c
+" nnoremap <leader>c <C-w>c
 nnoremap <space><space> zO
 
 "nnoremap ; :
@@ -188,3 +195,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+
+nmap <leader>gs :G<CR>
+nnoremap <leader>gb :GCheckout<CR>
+nnoremap <leader>grum :Git rebase upstream/master<CR>
+nnoremap <leader>grom :Git rebase origin/master<CR>
+nmap <leader>ps :Rg<Space>
+nmap <leader>ph :Rg --hidden<Space>

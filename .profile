@@ -4,7 +4,7 @@
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export READER="zathura"
 export FILE="vifm"
@@ -14,6 +14,7 @@ export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export XDG_CONFIG_HOME="$HOME/.config"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 # less/man colors
 export LESS=-R
@@ -28,7 +29,8 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=12
 # PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
-PANEL_FONT="-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*"
+PANEL_FONT="xos4 Terminus:style=Bold:size=10"
+# PANEL_FONT="xos4 Terminus"
 PANEL_WM_NAME=bspwm_panel
 export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
 

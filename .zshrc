@@ -1,11 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.ohmyzsh
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent lifetime 4h
+# zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github
+zstyle :omz:plugins:ssh-agent identities id_rsa
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sporty_256"
+ZSH_THEME="frontcube"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +53,9 @@ ZSH_THEME="sporty_256"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux extract archlinux)
+plugins=(git tmux extract archlinux ssh-agent)
+# plugins=(git tmux extract archlinux)
+# plugins=(git tmux extract archlinux)
 
 # autoload edit-command-line
 # zle -N edit-command-line
@@ -70,9 +76,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
+export TERM=screen-256color
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -98,6 +105,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+se(){du -a $1 | awk '{print $2}' | fzf | xargs -r $EDITOR;}
+vf(){fzf | xargs -r $EDITOR;}
 alias -g v='nvim'
 alias -g sv="sudo nvim"
 alias -g zrc="nvim ~/.zshrc"
@@ -142,7 +151,9 @@ alias -g pir='pip install -r'
 alias -g pf='pip freeze'
 
 alias -g df='df -h'                          # human-readable sizes
-alias -g free='free -m'                      # show sizes in MB
+alias -g du='du -h'                          # human-readable sizes
+alias -g free='free -mh'                      # show sizes in MB
+alias -g fd='s fdisk -l'
 alias -g printer='system-config-printer'
 
 alias -g ssta='sudo systemctl start'
@@ -153,8 +164,12 @@ alias -g om='oddsmon.py'
 alias -g om2='oddsmon2.py'
 alias -g i='invs.py'
 alias -g i2='invs2.py'
-alias -g enps='sudo systemctl start dhcpcd@enp63s0'
-alias -g enpo='sudo systemctl stop dhcpcd@enp63s0'
-alias -g trr='transmission-remote-cli'
-alias -g td='transmission-daemon'
+alias -g eth0='sudo systemctl start dhcpcd@ens33'
+alias -g pp='sudo systemctl start dhcpcd@enp0s29f7u6'
+alias -g trr='tremc'
 alias -g tdt='td-toggle'
+alias -g pv='mpv --ytdl-format=160+249 --ytdl-raw-options=limit-rate=50K'
+alias -g pv2='mpv --ytdl-format=18+249 --ytdl-raw-options=limit-rate=300K'
+alias -g yf='youtube-dl -F'
+alias -g y18='youtube-dl -f 18'
+alias -g y251='youtube-dl -f 251'

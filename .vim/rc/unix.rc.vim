@@ -79,3 +79,4 @@ set mouse=
 
 " Colorscheme
 colorscheme gruvbox-material
+set background=dark
