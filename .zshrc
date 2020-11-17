@@ -53,7 +53,7 @@ ZSH_THEME="frontcube"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux extract archlinux ssh-agent)
+plugins=(git tmux extract archlinux ssh-agent gpg-agent)
 # plugins=(git tmux extract archlinux)
 # plugins=(git tmux extract archlinux)
 
@@ -173,3 +173,5 @@ alias -g pv2='mpv --ytdl-format=18+249 --ytdl-raw-options=limit-rate=300K'
 alias -g yf='youtube-dl -F'
 alias -g y18='youtube-dl -f 18'
 alias -g y251='youtube-dl -f 251'
+alias -g pasi='pass insert'
+alias -g pase='pass edit'

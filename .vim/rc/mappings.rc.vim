@@ -197,7 +197,7 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 
 nmap <leader>gs :G<CR>
-nnoremap <leader>gb :GCheckout<CR>
+nnoremap <leader>gb :GBranches<CR>
 nnoremap <leader>grum :Git rebase upstream/master<CR>
 nnoremap <leader>grom :Git rebase origin/master<CR>
 nmap <leader>ps :Rg<Space>

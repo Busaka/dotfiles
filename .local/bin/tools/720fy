@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in *.png; do
+    printf "Resize $i\n"
+    convert "$i" -resize 1280x720 "$i"
+done

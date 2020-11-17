@@ -7,9 +7,13 @@ Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
 
 ! special
-*.foreground:   #f1ebeb
-*.background:   #030303
+! *.foreground:   #f1ebeb
+! *.background:   #030303
 *.cursorColor:  #f1ebeb
+
+/* ! Dracula Xresources palette */
+*.foreground: #F8F8F2
+*.background: #282A36
 
 ! ! black
 ! *.color0:       #252525
@@ -44,6 +48,7 @@ Xft.lcdfilter:  lcddefault
 ! *.color15:      #ffffff
 !
  
+
 /* !! gruvbox: */
 *.color0: #1d2021
 *.color1: #cc241d
@@ -85,27 +90,31 @@ xterm*BorderWidth: 20
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-rofi.font: Hack 11
+! Rofi config file
+rofi.lines: 12
+rofi.font: Fira Code 11
+rofi.show-icons: true
+rofi.theme: ~/.config/rofi/oxide.rasi
+
 ! State:           bg      border  separator
-rofi.color-window: #222,   #222,   #222 
+! rofi.color-window: #222,   #222,   #222 
 ! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
-rofi.color-normal: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
-rofi.color-active: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
-rofi.color-urgent: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
-rofi.separator-style: none
-rofi.hide-scrollbar: true
-rofi.fullscreen: false
-rofi.line-margin: 0
-rofi.eh: 1
-rofi.width: 15
-rofi.location: 0 
-rofi.columns: 1
-rofi.padding: 50
-rofi.lines: 10
+! rofi.color-normal: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
+! rofi.color-active: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
+! rofi.color-urgent: argb:00000000, #f1ebeb, argb:00000000, argb:00000000, #ff00a0
+! rofi.separator-style: none
+! rofi.hide-scrollbar: true
+! rofi.fullscreen: false
+! rofi.line-margin: 0
+!rofi.eh: 1
+!rofi.width: 15
+!rofi.location: 0 
+!rofi.columns: 1
+! rofi.padding: 50
 !rofi.width: 100
 !rofi.location: 2 
 !rofi.columns: 20
-!rofi.padding: 5
+! rofi.padding: 5
 !rofi.lines: 1
 
 Sxiv.font: Fira Code:size=11

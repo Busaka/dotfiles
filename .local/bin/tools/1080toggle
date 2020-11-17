@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if xrandr | grep DisplayPort-0 | grep 3440;then
+    xrandr --output DisplayPort-0 --mode 1920x1080
+	notify-send "1080 activated - SCRUB!"
+else
+    xrandr --output DisplayPort-0 --auto
+	notify-send "HOW WIDE?"
+fi

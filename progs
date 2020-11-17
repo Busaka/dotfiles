@@ -4,6 +4,7 @@ xorg-xinit
 xorg-font-util
 terminus-font
 ttf-linux-libertine
+sudo
 arandr
 bc
 calcurse
@@ -107,3 +108,17 @@ python-tldextract
 usbutils
 neovim
 neovim-qt
+at
+rofi
+xorg-xset
+xorg-xsetroot
+terminus-font
+intel-ucode
+intel-media-sdk
+intel-media-driver
+xf86-video-intel
+intel-gmmlib
+xf86-video-fbdev
+xterm
+xf86-input-libinput
+aria2

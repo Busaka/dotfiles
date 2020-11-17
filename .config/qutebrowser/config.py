@@ -8,7 +8,7 @@ c.completion.cmd_history_max_items = 1000
 c.completion.scrollbar.padding = 0
 c.content.headers.accept_language = "en-GB,en,en-US"
 c.content.notifications = True 
-c.content.user_stylesheets = ["style2.css"]
+c.content.user_stylesheets = ["styles/style2.css"]
 # config.set("colors.webpage.darkmode.enabled", True)
 c.downloads.open_dispatcher = "xdg-open"
 c.downloads.position = "bottom"
@@ -148,17 +148,34 @@ c.colors.prompts.selected.bg = xresources['*.color12']
 #config.bind('<Ctrl-Shift-m>', 'spawn --detach mpv --force-window yes {url}')
 # config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes --ytdl-format=160+249 {url}')
 config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes {url}')
-config.bind('<Ctrl-Shift-p>', 'spawn --userscript password_fill')
-config.bind('z', 'download-open')
+config.bind('zd', 'download-open')
 config.bind('xx', 'config-cycle tabs.show switching always')
+config.bind('xp', 'spawn ~/.local/bin/pocketadd {url}')
+# config.bind('xh', 'config-cycle content.user_stylesheets /home/ll/.config/qutebrowser/styles/style2.css  /home/ll/.config/qutebrowser/styles/style.css')
+config.bind('xh', 'config-cycle content.user_stylesheets /home/ll/.config/qutebrowser/styles/style2.css ""')
+config.bind('B', 'set-cmd-text -s :bookmark-load')
+config.bind('xs', 'config-source')
 config.bind('xb', 'config-cycle statusbar.show in-mode always')
-config.bind('tg', 'tab-give')
+config.bind('<Alt+Up>', 'tab-prev')
+config.bind('<Alt+Down>', 'tab-next')
+config.bind('<Alt+Right>', 'tab-give')
+# Unbind shite defaults
 config.unbind('q')
+# config.unbind('z')
 config.unbind('<Ctrl-v>')
+
 config.bind('<Ctrl-y>', 'hint links spawn --detach mpv --force-window yes {hint-url}')
 
+# configs are for downloading videos and music
+config.bind('zy', 'hint links spawn ~/.local/bin/ytdv {hint-url}')
+config.bind('zp', 'hint links spawn ~/.local/bin/ytdlp {hint-url} ~/Downloads/qbdownloads')
+config.bind('zv', 'spawn ~/.local/bin/ytdv {url}')
+config.bind('qr', 'spawn ~/.local/bin/qr {url}')
+
 # Dealing with login forms
-config.bind('<,><l>', 'spawn --userscript qute-pass')
+# config.bind('<Ctrl-Shift-p>', 'spawn --userscript password_fill')
+config.bind('<,><l>', "spawn --userscript qute-pass -U secret -u 'username: (.+)'")
+# config.bind('<,><l>', 'spawn --userscript qute-pass --username-target secret --username-regex "username: (.+)"')
 config.bind('<,><u><l>', 'spawn --userscript qute-pass --username-only')
 config.bind('<,><p><l>', 'spawn --userscript qute-pass --password-only')
 config.bind('<,><o><l>', 'spawn --userscript qute-pass --otp-only')

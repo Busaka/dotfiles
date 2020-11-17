@@ -1,0 +1,11 @@
+#!/bin/bash
+#usage 'remind "TEXT" TIME (remind "test" 1)
+#saves all reminders to 'remind.txt' with time and date, forever... for history"
+if [ $# -ne 2 ]; then
+    echo "needs message and mins";
+    exit;
+fi
+at now + $2 min <<ENDMARKER
+notify-send "$1" && mpv ~/.local/bin/tools/beep.mp3 && notify-send -u low Timer "$1 minute(s) passed" || notify-send -u critical Timer "Something went wrong"
+ENDMARKER
+exit;

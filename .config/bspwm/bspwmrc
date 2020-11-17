@@ -50,13 +50,13 @@ bspc config pointer_modifier shift
 
 
 # RULES
-bspc rule -a St follow=on desktop='^1'
+bspc rule -a Alacritty follow=on desktop='^1'
 bspc rule -a qutebrowser follow=on desktop='^2'
 bspc rule -a Pcmanfm desktop='^3'
-bspc rule -a xed desktop='^4'
-bspc rule -a sxiv desktop='^5'
+bspc rule -a Xed desktop='^3'
+bspc rule -a Sxiv desktop='^5'
 bspc rule -a feh desktop='^5'
-bspc rule -a brave-beta desktop='^6'
+bspc rule -a Brave-browser-beta desktop='^6'
 bspc rule -a mpv state=floating rectangle=620x350+250+625 follow=on sticky=on
 #bspc rule -a Steam desktop='^7' state=tiled follow=off
 #bspc rulw -a Spotify:spotify desktop='^2' state=tiled follow=off

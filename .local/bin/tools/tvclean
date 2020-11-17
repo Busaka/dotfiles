@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /mnt/rust1/TV/
+find . -name '*.*' -type f -delete
