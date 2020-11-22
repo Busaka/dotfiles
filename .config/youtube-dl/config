@@ -1,5 +1,5 @@
 --ignore-errors
-# --no-playlist
+--no-playlist
 
 # Save in ~/Videos
 -o ~/Videos/ytdl/%(title)s.%(ext)s

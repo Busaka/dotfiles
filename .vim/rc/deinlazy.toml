@@ -527,11 +527,7 @@ let g:haskell_conceal = 0
 [[plugins]]
 repo = 'junegunn/fzf'
 on_cmd = 'FZF'
+hook_source = 'source ~/.vim/rc/fzf.rc.vim'
 hook_add = '''
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 nnoremap <silent> <Space>f :Files<Space>
-nnoremap <silent> <Leader>C        :Colors<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>L        :Lines<CR>
-nnoremap <silent> q/ :History/<CR>
 '''

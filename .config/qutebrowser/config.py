@@ -8,7 +8,7 @@ c.completion.cmd_history_max_items = 1000
 c.completion.scrollbar.padding = 0
 c.content.headers.accept_language = "en-GB,en,en-US"
 c.content.notifications = True 
-c.content.user_stylesheets = ["styles/style2.css"]
+# c.content.user_stylesheets = ["styles/style2.css"]
 # config.set("colors.webpage.darkmode.enabled", True)
 c.downloads.open_dispatcher = "xdg-open"
 c.downloads.position = "bottom"
@@ -152,7 +152,7 @@ config.bind('zd', 'download-open')
 config.bind('xx', 'config-cycle tabs.show switching always')
 config.bind('xp', 'spawn ~/.local/bin/pocketadd {url}')
 # config.bind('xh', 'config-cycle content.user_stylesheets /home/ll/.config/qutebrowser/styles/style2.css  /home/ll/.config/qutebrowser/styles/style.css')
-config.bind('xh', 'config-cycle content.user_stylesheets /home/ll/.config/qutebrowser/styles/style2.css ""')
+# config.bind('xh', 'config-cycle content.user_stylesheets "" /home/ll/.config/qutebrowser/styles/style2.css')
 config.bind('B', 'set-cmd-text -s :bookmark-load')
 config.bind('xs', 'config-source')
 config.bind('xb', 'config-cycle statusbar.show in-mode always')

@@ -122,3 +122,8 @@ xf86-video-fbdev
 xterm
 xf86-input-libinput
 aria2
+xorg-xev
+pass
+pass-otp
+pam-gnupg-git
+mtools
