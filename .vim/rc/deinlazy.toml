@@ -530,4 +530,8 @@ on_cmd = 'FZF'
 hook_source = 'source ~/.vim/rc/fzf.rc.vim'
 hook_add = '''
 nnoremap <silent> <Space>f :Files<Space>
+nnoremap <silent> <Leader>`        :Marks<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>L        :Lines<CR>
+nnoremap <silent> q/ :History/<CR>
 '''

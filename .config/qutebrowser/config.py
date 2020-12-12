@@ -61,7 +61,11 @@ c.url.searchengines = {"DEFAULT": "https://google.com/search?&q={}",
 "it": "https://itch.io/search?q={}",
 "tpb": "https://thepiratebay.org/search/{}/0/7/0",
 "p": "https://www.protondb.com/search?q={}",
-"a": "https://www.amazon.co.uk/s/?url=search-alias&field-keywords={}"}
+"a": "https://www.amazon.co.uk/s/?url=search-alias&field-keywords={}", 
+"eb": "https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw={}&_sacat=0", 
+"ji": "https://jiji.co.ke/search?query={}", 
+"ju": "https://www.jumia.co.ke/catalog/?q={}", 
+}
 c.completion.open_categories = ["quickmarks", "bookmarks", "history"]
 # ads
 c.content.host_blocking.enabled = True

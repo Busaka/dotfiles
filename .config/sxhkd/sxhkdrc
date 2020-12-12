@@ -163,7 +163,7 @@ super + F3
 super + F4
 	prompt 'Hibernate computer?' 'sudo -A zzz -Z'
 super + F5
-        brave-beta
+        firefox
 # Start torrent daemon/open interface
 super + F6
 	torwrap

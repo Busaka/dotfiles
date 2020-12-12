@@ -74,6 +74,7 @@ export LIBGL_ALWAYS_SOFTWARE=1
 xset r rate 300 50 &	# Speed xrate up
 xsetroot -cursor_name left_ptr &
 unclutter &		# Remove mouse when idle
+remaps &
 dunst &			# dunst for notifications
 mpdupdate &
 #dwm_status &

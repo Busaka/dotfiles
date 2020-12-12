@@ -16,6 +16,12 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export XDG_CONFIG_HOME="$HOME/.config"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export TLDEXTRACT_CACHE="$HOME/.cache/tldextract"
+export VIDEO="mpv"
+export IMAGE="feh"
+#export COLORTERM="truecolor"
+export OPENER="xdg-open"
+export WM="bspwm"
+
 
 # less/man colors
 export LESS=-R

@@ -153,7 +153,7 @@ alias -g pf='pip freeze'
 alias -g df='df -h'                          # human-readable sizes
 alias -g du='du -h'                          # human-readable sizes
 alias -g free='free -mh'                      # show sizes in MB
-alias -g fd='s fdisk -l'
+alias -g fd='sudo fdisk -l'
 alias -g printer='system-config-printer'
 
 alias -g ssta='sudo systemctl start'
@@ -172,6 +172,9 @@ alias -g pv='mpv --ytdl-format=160+249 --ytdl-raw-options=limit-rate=50K'
 alias -g pv2='mpv --ytdl-format=18+249 --ytdl-raw-options=limit-rate=300K'
 alias -g yf='youtube-dl -F'
 alias -g y18='youtube-dl -f 18'
-alias -g y251='youtube-dl -f 251'
+alias -g yta='youtube-dl -f bestaudio'
+alias -g ytlp='youtube-dl --flat-playlist --skip-download'
+alias -g ytdp='youtube-dl -f 18  --playlist-items'
+alias -g ytdpa='youtube-dl -f bestaudio  --playlist-items'
 alias -g pasi='pass insert'
 alias -g pase='pass edit'

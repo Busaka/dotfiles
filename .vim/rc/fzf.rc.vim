@@ -43,10 +43,10 @@ endif
 " nnoremap <silent> q/ :History/<CR>
 " nnoremap <silent> <Space>f :Files<Space>
 " nnoremap <silent> <Leader>C        :Colors<CR>
-nnoremap <silent> <Leader>`        :Marks<CR>
-nnoremap <silent> <Leader><Enter>  :Buffers<CR>
-nnoremap <silent> <Leader>L        :Lines<CR>
-nnoremap <silent> q/ :History/<CR>
+" nnoremap <silent> <Leader>`        :Marks<CR>
+" nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+" nnoremap <silent> <Leader>L        :Lines<CR>
+" nnoremap <silent> q/ :History/<CR>
 
 " inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
 " imap <c-x><c-k> <plug>(fzf-complete-word)

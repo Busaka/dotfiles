@@ -6,7 +6,7 @@
 set shell=sh
 
 " Set path.
-let $PATH = expand('~/bin').':/usr/local/bin/:'.$PATH
+let $PATH = expand('~/.local/bin').':/usr/local/bin/:'.$PATH
 
 let g:terminal_ansi_colors = [
       \ '#6c6c6c', '#ff6666', '#66ff66', '#ffd30a',

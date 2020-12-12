@@ -4,7 +4,7 @@ xorg-xinit
 xorg-font-util
 terminus-font
 ttf-linux-libertine
-sudo
+
 arandr
 bc
 calcurse
@@ -107,7 +107,6 @@ python-pynvim
 python-tldextract
 usbutils
 neovim
-neovim-qt
 at
 rofi
 xorg-xset
@@ -127,3 +126,6 @@ pass
 pass-otp
 pam-gnupg-git
 mtools
+android-tools
+firefox
+xcape

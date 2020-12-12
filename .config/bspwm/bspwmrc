@@ -57,6 +57,7 @@ bspc rule -a Xed desktop='^3'
 bspc rule -a Sxiv desktop='^5'
 bspc rule -a feh desktop='^5'
 bspc rule -a Brave-browser-beta desktop='^6'
+bspc rule -a firefox desktop='^6'
 bspc rule -a mpv state=floating rectangle=620x350+250+625 follow=on sticky=on
 #bspc rule -a Steam desktop='^7' state=tiled follow=off
 #bspc rulw -a Spotify:spotify desktop='^2' state=tiled follow=off
