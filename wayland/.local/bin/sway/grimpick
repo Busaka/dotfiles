@@ -1,0 +1,8 @@
+#!/bin/sh
+
+screenshotsdir="$HOME/Pictures/screenshots"
+
+mkdir -p "$screenshotsdir"
+
+grim  $screenshotsdir/pic-full-$(date '+%y%m%d-%H%M-%S').png
+

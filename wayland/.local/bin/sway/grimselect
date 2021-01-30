@@ -1,0 +1,11 @@
+#!/bin/sh
+
+screenshotsdir="$HOME/Pictures/screenshots"
+
+mkdir -p "$screenshotsdir"
+
+case "$(printf "a selected area\\na selected area (copy)\\ncurrent window (copy)" | bemenu -l 3 -i -p "Screenshot which area?")" in
+	"a selected area") grim -g "$(slurp)" $screenshotsdir/pic-selected-"$(date '+%y%m%d-%H%M-%S').png" ;;
+	"a selected area (copy)") grim -g "$(slurp)" - | wl-copy ;;
+  "current window screen (copy)") grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy;;
+esac

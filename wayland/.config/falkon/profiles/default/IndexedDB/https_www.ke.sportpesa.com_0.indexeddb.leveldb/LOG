@@ -1,0 +1,15 @@
+2021/01/15-18:25:33.580 329a Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.ke.sportpesa.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/01/15-18:25:33.580 329a Recovering log #4
+2021/01/15-18:25:33.581 329a Reusing old log /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.ke.sportpesa.com_0.indexeddb.leveldb/000004.log 
+2021/01/15-18:26:19.280 33c3 Level-0 table #8: started
+2021/01/15-18:26:19.330 33c3 Level-0 table #8: 1135 bytes OK
+2021/01/15-18:26:19.408 33c3 Delete type=0 #4
+2021/01/15-18:26:19.409 33c3 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/01/15-18:26:19.409 33c3 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01+\x00u\x00n\x00A\x00u\x00t\x00h\x00M\x00e\x00s\x00s\x00a\x00g\x00i\x00n\x00g\x00-\x00s\x00t\x00o\x00r\x00a\x00g\x00e\x00_\x00e\x00x\x00p\x00i\x00r\x00a\x00t\x00i\x00o\x00n\x00-\x008\x005\x007\x003\x008\x001\x004\x002' @ 141 : 1
+2021/01/15-18:26:19.409 33c3 Compacting 1@1 + 1@2 files
+2021/01/15-18:26:19.448 33c3 Generated table #9@1: 21 keys, 747 bytes
+2021/01/15-18:26:19.448 33c3 Compacted 1@1 + 1@2 files => 747 bytes
+2021/01/15-18:26:19.478 33c3 compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/01/15-18:26:19.478 33c3 Delete type=2 #8
+2021/01/15-18:26:19.479 33c3 Delete type=2 #5
+2021/01/15-18:26:19.479 33c3 Manual compaction at level-1 from '\x00\x01\x01\x02\x01+\x00u\x00n\x00A\x00u\x00t\x00h\x00M\x00e\x00s\x00s\x00a\x00g\x00i\x00n\x00g\x00-\x00s\x00t\x00o\x00r\x00a\x00g\x00e\x00_\x00e\x00x\x00p\x00i\x00r\x00a\x00t\x00i\x00o\x00n\x00-\x008\x005\x007\x003\x008\x001\x004\x002' @ 141 : 1 .. (end); will stop at (end)

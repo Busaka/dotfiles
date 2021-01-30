@@ -1,0 +1,5 @@
+2021/01/15-15:44:36.343 10b6 Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.ke.sportpesa.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/01/15-15:45:17.114 1107 Level-0 table #5: started
+2021/01/15-15:45:17.145 1107 Level-0 table #5: 1705 bytes OK
+2021/01/15-15:45:17.171 1107 Delete type=0 #3
+2021/01/15-15:45:17.171 1107 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
