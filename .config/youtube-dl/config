@@ -1,8 +1,11 @@
 --ignore-errors
 --no-playlist
+--mark-watched
 
 # Save in ~/Videos
--o ~/Videos/ytdl/%(title)s.%(ext)s
 
+# -o ~/Videos/ytdl/%(title)s.%(ext)s
+-o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/%(title)s.%(ext)s
+# -o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/ngoma/%(title)s.%(ext)s
 # Prefer 1080p or lower resolutions
 #-f bestvideo[ext=mp4][height<1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][height<1200]+bestaudio[ext=webm]/bestvideo[height<1200]+bestaudio/best[height<1200]/best
