@@ -151,6 +151,8 @@ XF86Mail
 XF86MyComputer
 	$TERMINAL -e $FILE /
 
+super + a
+	$TERMINAL -e pulsemixer
 # Function keys
 #super + shift + F1
 #super + F1
@@ -163,7 +165,9 @@ super + F3
 super + F4
 	prompt 'Hibernate computer?' 'sudo -A zzz -Z'
 super + F5
-        firefox
+
+super + v
+        vbox
 # Start torrent daemon/open interface
 super + F6
 	torwrap
@@ -171,8 +175,8 @@ super + F6
 super + F7
 	td-toggle
 # sync email
-super + F8
-	mailsync
+#super + F8
+#	mailsync
 # Mount a USB drive or Android device
 super + {F9,F10}
 	{dmenumount,dmenuumount}

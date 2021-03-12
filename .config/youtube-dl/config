@@ -1,11 +1,14 @@
 --ignore-errors
---no-playlist
+# --no-playlist
 --mark-watched
 
 # Save in ~/Videos
 
 # -o ~/Videos/ytdl/%(title)s.%(ext)s
--o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/%(title)s.%(ext)s
-# -o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/ngoma/%(title)s.%(ext)s
+# -o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/new/%(title)s.%(ext)s
+#-o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/%(title)s.%(ext)s
+-o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/noel/%(title)s.%(ext)s
+# -o /run/media/ll/99f857ad-35d4-45e4-8792-d588e1ec86fb/ll/Videos/ytdl/vnn/%(title)s.%(ext)s
+# -o /run/media/ll/f20318f3-41ef-4376-aa07-7ca9d6ce4f1a/noel/%(title)s.%(ext)s
 # Prefer 1080p or lower resolutions
 #-f bestvideo[ext=mp4][height<1200]+bestaudio[ext=m4a]/bestvideo[ext=webm][height<1200]+bestaudio[ext=webm]/bestvideo[height<1200]+bestaudio/best[height<1200]/best

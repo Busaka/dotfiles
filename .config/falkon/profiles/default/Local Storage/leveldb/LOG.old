@@ -1,0 +1,15 @@
+2021/02/13-16:00:12.928 1378 Reusing MANIFEST /home/ll/.config/falkon/profiles/default/Local Storage/leveldb/MANIFEST-000001
+2021/02/13-16:00:12.929 1378 Recovering log #80
+2021/02/13-16:00:12.990 1378 Reusing old log /home/ll/.config/falkon/profiles/default/Local Storage/leveldb/000080.log 
+2021/02/13-16:34:12.833 151f Level-0 table #84: started
+2021/02/13-16:34:12.888 151f Level-0 table #84: 18952 bytes OK
+2021/02/13-16:34:12.933 151f Delete type=0 #80
+2021/02/13-16:34:12.934 151f Compacting 4@0 + 1@1 files
+2021/02/13-16:34:12.989 151f Generated table #85@0: 613 keys, 302661 bytes
+2021/02/13-16:34:12.989 151f Compacted 4@0 + 1@1 files => 302661 bytes
+2021/02/13-16:34:13.016 151f compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/02/13-16:34:13.017 151f Delete type=2 #81
+2021/02/13-16:34:13.017 151f Delete type=2 #79
+2021/02/13-16:34:13.017 151f Delete type=2 #84
+2021/02/13-16:34:13.017 151f Delete type=2 #77
+2021/02/13-16:34:13.017 151f Delete type=2 #75

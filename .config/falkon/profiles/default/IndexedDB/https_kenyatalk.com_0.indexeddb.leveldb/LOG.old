@@ -1,0 +1,26 @@
+2021/02/13-16:09:27.073 141c Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_kenyatalk.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/02/13-16:09:27.073 141c Recovering log #432
+2021/02/13-16:09:27.073 141c Reusing old log /home/ll/.config/falkon/profiles/default/IndexedDB/https_kenyatalk.com_0.indexeddb.leveldb/000432.log 
+2021/02/13-16:09:28.034 13fd Level-0 table #438: started
+2021/02/13-16:09:28.076 13fd Level-0 table #438: 532 bytes OK
+2021/02/13-16:09:28.111 13fd Delete type=0 #432
+2021/02/13-16:09:28.111 13fd Manual compaction at level-0 from '\x00C\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00D\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/02/13-16:09:30.037 13fd Level-0 table #440: started
+2021/02/13-16:09:30.072 13fd Level-0 table #440: 218 bytes OK
+2021/02/13-16:09:30.102 13fd Delete type=0 #437
+2021/02/13-16:09:30.102 13fd Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 1276 : 0
+2021/02/13-16:09:30.102 13fd Compacting 1@0 + 1@1 files
+2021/02/13-16:09:30.131 13fd Generated table #441@0: 2 keys, 196 bytes
+2021/02/13-16:09:30.131 13fd Compacted 1@0 + 1@1 files => 196 bytes
+2021/02/13-16:09:30.161 13fd compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/02/13-16:09:30.161 13fd Delete type=2 #440
+2021/02/13-16:09:30.161 13fd Delete type=2 #438
+2021/02/13-16:09:30.162 13fd Manual compaction at level-0 from '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 1276 : 0 .. (end); will stop at (end)
+2021/02/13-16:09:30.162 13fd Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x03' @ 1271 : 0
+2021/02/13-16:09:30.162 13fd Compacting 1@1 + 1@2 files
+2021/02/13-16:09:30.191 13fd Generated table #442@1: 5 keys, 249 bytes
+2021/02/13-16:09:30.191 13fd Compacted 1@1 + 1@2 files => 249 bytes
+2021/02/13-16:09:30.235 13fd compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/02/13-16:09:30.235 13fd Delete type=2 #441
+2021/02/13-16:09:30.235 13fd Delete type=2 #435
+2021/02/13-16:09:30.235 13fd Manual compaction at level-1 from '\x00\x00\x00\x00\x03' @ 1271 : 0 .. (end); will stop at (end)

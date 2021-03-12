@@ -26,6 +26,8 @@ _check bspwm_conf_desktops && bspwm_conf_desktops
 unfocused=#3A2F3F
 focused=#FF3CFF
 select=#FF3CFF
+#focused=#934d3a
+#select=#934d3a
 padding=0
 
 # for side in top right bottom left; do
@@ -56,9 +58,10 @@ bspc rule -a Pcmanfm desktop='^3'
 bspc rule -a Xed desktop='^3'
 bspc rule -a Sxiv desktop='^5'
 bspc rule -a feh desktop='^5'
+bspc rule -a Falkon follow=on desktop='^6'
 bspc rule -a Brave-browser-beta desktop='^6'
 bspc rule -a firefox desktop='^6'
-bspc rule -a mpv state=floating rectangle=620x350+250+625 follow=on sticky=on
+bspc rule -a mpv state=floating rectangle=425x240+270+475 follow=on sticky=on
 #bspc rule -a Steam desktop='^7' state=tiled follow=off
 #bspc rulw -a Spotify:spotify desktop='^2' state=tiled follow=off
 #bspc rule -a Discord desktop='^8'
@@ -74,10 +77,10 @@ _check  sxhkd && sxhkd -c "$HOME"/.config/sxhkd/sxhkdrc{,_bspc} &
 
 # [ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
 # Launch my custom Lemonbar implementation (the system panel).
-if _check panel; then
+#if _check panel; then
 	# Make sure we have no running instances
-	pgrep -x panel && pkill -x panel
-	panel &
+#	pgrep -x panel && pkill -x panel
+#	panel &
 
     # Add padding equal to the panel height to fix an issue where there
     # is an overlap between panel and windows in monitor LVDS1.  The
@@ -92,4 +95,4 @@ if _check panel; then
     #
 	   #  bspc config bottom_padding "$(_panel_height)"
     # fi
-fi
+#fi

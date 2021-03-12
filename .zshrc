@@ -178,3 +178,6 @@ alias -g ytdp='youtube-dl -f 18  --playlist-items'
 alias -g ytdpa='youtube-dl -f bestaudio  --playlist-items'
 alias -g pasi='pass insert'
 alias -g pase='pass edit'
+alias -g resfix1="xrandr --newmode $(cvt 1280 1024 60 | grep Mode | sed -e 's/.*"/1280x1024/') && xrandr --addmode VGA1 1280x1024"
+alias -g resfix2="xrandr --newmode $(cvt 1152 864 60 | grep Mode | sed -e 's/.*"/1152x864/') && xrandr --addmode VGA1 1152x900"
+xrandr --addmode VGA1 1280x1024

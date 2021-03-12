@@ -1,0 +1,15 @@
+2021/02/13-16:57:39.922 16a5 Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/02/13-16:57:39.923 16a5 Recovering log #50
+2021/02/13-16:57:39.923 16a5 Reusing old log /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000050.log 
+2021/02/13-16:59:37.595 13fd Level-0 table #55: started
+2021/02/13-16:59:37.637 13fd Level-0 table #55: 582 bytes OK
+2021/02/13-16:59:37.666 13fd Delete type=0 #50
+2021/02/13-16:59:37.666 13fd Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/02/13-16:59:37.666 13fd Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x16\x00y\x00t\x00-\x00i\x00d\x00b\x00-\x00t\x00e\x00s\x00t\x00-\x00d\x00o\x00-\x00n\x00o\x00t\x00-\x00u\x00s\x00e' @ 1614 : 1
+2021/02/13-16:59:37.666 13fd Compacting 1@1 + 1@2 files
+2021/02/13-16:59:37.696 13fd Generated table #56@1: 129 keys, 7458 bytes
+2021/02/13-16:59:37.697 13fd Compacted 1@1 + 1@2 files => 7458 bytes
+2021/02/13-16:59:37.724 13fd compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/02/13-16:59:37.724 13fd Delete type=2 #55
+2021/02/13-16:59:37.724 13fd Delete type=2 #52
+2021/02/13-16:59:37.725 13fd Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x16\x00y\x00t\x00-\x00i\x00d\x00b\x00-\x00t\x00e\x00s\x00t\x00-\x00d\x00o\x00-\x00n\x00o\x00t\x00-\x00u\x00s\x00e' @ 1614 : 1 .. (end); will stop at (end)

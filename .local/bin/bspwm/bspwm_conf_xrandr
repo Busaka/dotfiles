@@ -25,7 +25,11 @@
 # working with light themes.  Adjustments to these values have no effect
 # if a program such as `redshift' is running.
 _mydesktop() {
-	xrandr --output VGA-1 --primary --mode 1280x1024 --pos 0x0
+  xrandr --newmode 1280x1024  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
+  xrandr --newmode 1152x864   81.75  1152 1216 1336 1520  864 867 871 897 -hsync +vsync
+  xrandr --addmode VGA1 1280x1024
+  xrandr --addmode VGA1 1152x864
+	xrandr --output VGA1 --primary --mode 1152x864 --pos 0x0
 	#xrandr --output VGA-1 --primary --mode 1440x900 --pos 0x0
 	# xrandr --output VGA-1 --primary  --pos 0x0 --rotate right
 }
@@ -42,7 +46,7 @@ _multihead() {
 	# Configure the external display on the VGA port.  Making it the
 	# `primary' can cause problems in certain contexts that assume this
 	# to be the left- and top- most monitor.
-	xrandr --output VGA-1 --primary --mode 1920x1080 --pos 1366x0
+	xrandr --output VGA1 --primary --mode 1280x1024 --pos 1366x0
 }
 
 # Conditions for running this script
@@ -63,7 +67,7 @@ _multihead() {
 #     _laptop --primary
 # fi
 
-if [ -n "$(xrandr --query | grep 'VGA-1 connected')" ]; then
+if [ -n "$(xrandr --query | grep 'VGA1 connected')" ]; then
 	_mydesktop
 else
     _laptop --primary

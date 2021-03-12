@@ -22,7 +22,7 @@ _modules() {
         echo "C" "Cpu:$(Cpu)"
         echo "R" "Mem:$(Memory)"
         echo "V" "Vol:$(Sound)"
-        sleep 1s
+        sleep 8s
     done
 }
 _modules > "$PANEL_FIFO" &

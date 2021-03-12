@@ -1,0 +1,5 @@
+2021/02/13-16:26:05.129 14c6 Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_jiji.co.ke_0.indexeddb.leveldb/MANIFEST-000001
+2021/02/13-16:36:14.782 13fd Level-0 table #5: started
+2021/02/13-16:36:14.816 13fd Level-0 table #5: 156899 bytes OK
+2021/02/13-16:36:14.845 13fd Delete type=0 #3
+2021/02/13-16:36:14.845 13fd Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,15 @@
+2021/02/12-19:07:31.644 410 Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_ua-1x-bet.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/02/12-19:07:31.644 410 Recovering log #28
+2021/02/12-19:07:31.645 410 Reusing old log /home/ll/.config/falkon/profiles/default/IndexedDB/https_ua-1x-bet.com_0.indexeddb.leveldb/000028.log 
+2021/02/12-19:11:00.627 46f Level-0 table #32: started
+2021/02/12-19:11:00.652 46f Level-0 table #32: 3375 bytes OK
+2021/02/12-19:11:00.681 46f Delete type=0 #28
+2021/02/12-19:11:00.681 46f Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/02/12-19:11:00.681 46f Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x06\x00c\x00o\x00u\x00p\x00o\x00n' @ 80 : 1
+2021/02/12-19:11:00.681 46f Compacting 1@1 + 1@2 files
+2021/02/12-19:11:00.713 46f Generated table #33@1: 30 keys, 731 bytes
+2021/02/12-19:11:00.713 46f Compacted 1@1 + 1@2 files => 731 bytes
+2021/02/12-19:11:00.739 46f compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/02/12-19:11:00.739 46f Delete type=2 #32
+2021/02/12-19:11:00.739 46f Delete type=2 #5
+2021/02/12-19:11:00.739 46f Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x06\x00c\x00o\x00u\x00p\x00o\x00n' @ 80 : 1 .. (end); will stop at (end)

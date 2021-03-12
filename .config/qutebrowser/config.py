@@ -2,14 +2,16 @@ import subprocess
 config.load_autoconfig()
 # exec(open("/home/ll/.bin/mm.py").read())
 
-c.spellcheck.languages = ['en-GB']
+c.spellcheck.languages = ['en-US']
 c.auto_save.session = True
 c.completion.cmd_history_max_items = 1000
 c.completion.scrollbar.padding = 0
-c.content.headers.accept_language = "en-GB,en,en-US"
+# Value to send in the `Accept-Language` header.
+# c.content.headers.accept_language = "en-GB,en,en-US"
+c.content.headers.accept_language = "en-US,en;q=0.8,fi;q=0.6"
 c.content.notifications = True 
 # c.content.user_stylesheets = ["styles/style2.css"]
-# config.set("colors.webpage.darkmode.enabled", True)
+# c.colors.webpage.darkmode.enabled  = True
 c.downloads.open_dispatcher = "xdg-open"
 c.downloads.position = "bottom"
 c.input.insert_mode.auto_load = False
@@ -31,13 +33,48 @@ c.tabs.show = "always"
 # c.tabs.title.format_pinned = c.tabs.title.format
 # c.tabs.width = 24
 # c.tabs.indicator.width = 0
-c.tabs.padding = {"top": 3, "right": 3, "bottom": 3, "left": 3}
+c.tabs.padding = {"top": 0, "right": 3, "bottom": 0, "left": 3}
 c.url.start_pages = "about:blank"
 c.url.default_page = "https://www.google.com"
 c.downloads.location.prompt = False
 c.content.geolocation = False
 c.content.ssl_strict = True
+c.content.autoplay = False
 #c.downloads.remove_finished = 800
+# c.qt.force_platform = Wayland
+# c.qt.force_platformtheme = Wayland
+
+
+# Fnux's configuration file for qutebrowser >=1.0
+# See http://qutebrowser.org/doc/help/settings.html for all available settings.
+
+# General
+# c.url.start_pages = "file:///home/fnux/.local/var/lib/browser-homepage/home.html"
+# c.url.default_page = "file:///home/fnux/.local/var/lib/browser-homepage/home.html"
+c.content.default_encoding = "utf-8"
+c.editor.command = ['urxvt256c', '-e','vim', '{}']
+
+# Rendering
+import platform
+if platform.node() == 'hiln':
+    config.set('qt.force_software_rendering', True)
+
+# Tabs
+c.tabs.background = True
+c.tabs.select_on_remove = 'prev'
+
+# Keybindings
+config.unbind('th')
+config.unbind('tl')
+
+config.bind('o', 'set-cmd-text -s :open')
+config.bind('O', 'set-cmd-text :open {url:pretty}')
+config.bind('t', 'set-cmd-text -s :open -t ')
+config.bind('T', 'set-cmd-text :open -t {url:pretty}')
+
+# config.bind('m', 'spawn mpv {url}', mode='normal')
+# config.bind('M', 'hint links spawn mpv {url}', mode='normal')
+
 c.hints.dictionary = "/usr/share/dict/british"
 c.url.searchengines = {"DEFAULT": "https://google.com/search?&q={}",
 "dd": "https://www.duckduckgo.com/?q={}",
@@ -68,9 +105,9 @@ c.url.searchengines = {"DEFAULT": "https://google.com/search?&q={}",
 }
 c.completion.open_categories = ["quickmarks", "bookmarks", "history"]
 # ads
-c.content.host_blocking.enabled = True
-c.content.host_blocking.lists.append("http://sbc.io/hosts/hosts")
-c.content.host_blocking.whitelist = ["thepiratebay.org", "www.bet365.com"]
+c.content.blocking.enabled = True
+c.content.blocking.adblock.lists.append("http://sbc.io/hosts/hosts")
+c.content.blocking.whitelist = ["thepiratebay.org", "www.bet365.com"]
 
 # zoom
 
@@ -78,80 +115,46 @@ c.zoom.default = 100
 
 # colours
 
-def read_xresources(prefix):
-    props = {}
-    x = subprocess.run(['xrdb', '-query'], stdout=subprocess.PIPE)
-    lines = x.stdout.decode().split('\n')
-    for line in filter(lambda l : l.startswith(prefix), lines):
-        prop, _, value = line.partition(':\t')
-        props[prop] = value
-    return props
+## Background color of the tab bar.
+## Type: QssColor
+c.colors.tabs.bar.bg = "#000000"
 
-xresources = read_xresources('*')
+## Background color of unselected even tabs.
+## Type: QtColor
+c.colors.tabs.even.bg = "#000000"
 
-c.colors.completion.fg = xresources['*.foreground']
-c.colors.completion.even.bg = xresources['*.background']
-c.colors.completion.odd.bg = xresources['*.background']
-c.colors.completion.category.fg = xresources['*.foreground']
-c.colors.completion.category.bg = xresources['*.background']
-c.colors.completion.category.border.top = xresources['*.background']
-c.colors.completion.item.selected.fg = c.colors.completion.category.fg
-c.colors.completion.item.selected.bg = xresources['*.color13']
-c.colors.completion.item.selected.border.top = c.colors.completion.item.selected.bg
-c.colors.completion.item.selected.border.bottom = xresources['*.background']
-c.colors.completion.match.fg = xresources['*.color14']
-c.colors.completion.scrollbar.bg = xresources['*.color0']
-c.colors.completion.scrollbar.fg = xresources['*.color8']
-c.colors.completion.category.border.bottom = xresources['*.background']
-c.colors.completion.category.border.top = xresources['*.background']
-c.colors.statusbar.command.fg = xresources['*.foreground']
-c.colors.statusbar.command.bg = xresources['*.background']
-c.colors.statusbar.insert.bg = xresources['*.color2']
-c.colors.statusbar.caret.bg = xresources['*.color4']
-c.colors.statusbar.progress.bg = xresources['*.foreground']
-c.colors.statusbar.url.success.http.fg = xresources['*.foreground']
-c.colors.statusbar.url.success.https.fg = xresources['*.color10']
-c.colors.statusbar.url.error.fg = c.colors.completion.fg
-c.colors.statusbar.url.warn.fg = c.colors.completion.fg
-c.colors.statusbar.url.hover.fg = xresources['*.color14']
-c.colors.tabs.odd.fg = xresources['*.foreground']
-c.colors.tabs.odd.bg = "#555555"
-c.colors.tabs.even.fg = c.colors.tabs.odd.fg
-c.colors.tabs.even.bg = c.colors.tabs.odd.bg
-c.colors.tabs.selected.odd.bg = xresources['*.color7']
-c.colors.tabs.selected.odd.fg = xresources['*.background']
-c.colors.tabs.selected.even.fg = c.colors.tabs.selected.odd.fg
-c.colors.tabs.selected.even.bg = c.colors.tabs.selected.odd.bg
-c.colors.tabs.bar.bg = '#292929'
-c.hints.border = "1px solid transparent"
-c.colors.hints.fg = xresources['*.background']
-c.colors.hints.bg = xresources['*.color11']
-c.colors.hints.match.fg = xresources['*.color2']
-c.colors.downloads.bar.bg = xresources['*.background']
-c.colors.downloads.start.fg = xresources['*.foreground']
-c.colors.downloads.system.fg = "none"
-c.colors.downloads.system.fg = "none"
-c.colors.downloads.error.fg = xresources['*.foreground']
-c.colors.downloads.error.bg = xresources['*.color13']
-c.colors.webpage.bg = xresources['*.foreground']
-c.colors.messages.error.fg = xresources['*.foreground']
-c.colors.messages.error.bg = xresources['*.color5']
-c.colors.messages.error.border = c.colors.messages.error.bg
-c.colors.messages.warning.fg = xresources['*.foreground']
-c.colors.messages.warning.bg = xresources['*.color4']
-c.colors.messages.warning.border = c.colors.messages.warning.bg
-c.colors.messages.info.fg = xresources['*.foreground']
-c.colors.messages.info.bg = xresources['*.background']
-c.colors.messages.info.border = c.colors.messages.info.bg
-c.colors.prompts.fg = xresources['*.foreground']
-c.colors.prompts.bg = xresources['*.color4']
-c.colors.prompts.selected.bg = xresources['*.color12']
+## Foreground color of unselected even tabs.
+## Type: QtColor
+c.colors.tabs.even.fg = "#b4b4b4"
+
+## Background color of unselected odd tabs.
+## Type: QtColor
+c.colors.tabs.odd.bg = "#000000"
+
+## Foreground color of unselected odd tabs.
+## Type: QtColor
+c.colors.tabs.odd.fg = "#b4b4b4"
+
+## Background color of selected even tabs.
+## Type: QtColor
+c.colors.tabs.selected.even.bg = "#ebe5d9"
+
+## Foreground color of selected even tabs.
+## Type: QtColor
+c.colors.tabs.selected.even.fg = "#000000"
+
+## Background color of selected odd tabs.
+## Type: QtColor
+c.colors.tabs.selected.odd.bg = "#ebe5d9"
+
+## Foreground color of selected odd tabs.
+## Type: QtColor
+c.colors.tabs.selected.odd.fg = "#000000"
 
 # keys
 
 #config.bind('<Ctrl-Shift-m>', 'spawn --detach mpv --force-window yes {url}')
 # config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes --ytdl-format=160+249 {url}')
-config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes {url}')
 config.bind('zd', 'download-open')
 config.bind('xx', 'config-cycle tabs.show switching always')
 config.bind('xp', 'spawn ~/.local/bin/pocketadd {url}')
@@ -160,15 +163,16 @@ config.bind('xp', 'spawn ~/.local/bin/pocketadd {url}')
 config.bind('B', 'set-cmd-text -s :bookmark-load')
 config.bind('xs', 'config-source')
 config.bind('xb', 'config-cycle statusbar.show in-mode always')
-config.bind('<Alt+Up>', 'tab-prev')
-config.bind('<Alt+Down>', 'tab-next')
-config.bind('<Alt+Right>', 'tab-give')
+config.bind('<Alt+Left>', 'tab-prev')
+config.bind('<Alt+Right>', 'tab-next')
+config.bind('<Alt+Down>', 'tab-give')
 # Unbind shite defaults
 config.unbind('q')
 # config.unbind('z')
 config.unbind('<Ctrl-v>')
 
 config.bind('<Ctrl-y>', 'hint links spawn --detach mpv --force-window yes {hint-url}')
+config.bind('<Ctrl-Shift-y>', 'spawn --detach mpv --force-window yes {url}')
 
 # configs are for downloading videos and music
 config.bind('zy', 'hint links spawn ~/.local/bin/ytdv {hint-url}')
@@ -177,9 +181,14 @@ config.bind('zv', 'spawn ~/.local/bin/ytdv {url}')
 config.bind('qr', 'spawn ~/.local/bin/qr {url}')
 
 # Dealing with login forms
+# config.bind(',p', 'spawn --userscript qute-pass --dmenu-invocation wofi -dmenu')
+# config.bind(',P', 'spawn --userscript qute-pass --dmenu-invocation dmenu --password-only')
 # config.bind('<Ctrl-Shift-p>', 'spawn --userscript password_fill')
-config.bind('<,><l>', "spawn --userscript qute-pass -U secret -u 'username: (.+)'")
+config.bind('<,><l>', 'spawn --userscript qute-pass --dmenu-invocation "wofi --show dmenu" -U secret -u "username: (.+)"')
+config.bind('<,><u><l>', 'spawn --userscript qute-pass --dmenu-invocation "wofi --show dmenu" --username-only')
+config.bind('<,><p><l>', 'spawn --userscript qute-pass --dmenu-invocation "wofi --show dmenu" --password-only')
+config.bind('<,><o><l>', 'spawn --userscript qute-pass --dmenu-invocation "wofi --show dmenu" --otp-only')
 # config.bind('<,><l>', 'spawn --userscript qute-pass --username-target secret --username-regex "username: (.+)"')
-config.bind('<,><u><l>', 'spawn --userscript qute-pass --username-only')
-config.bind('<,><p><l>', 'spawn --userscript qute-pass --password-only')
-config.bind('<,><o><l>', 'spawn --userscript qute-pass --otp-only')
+# config.bind('<,><u><l>', 'spawn --userscript qute-pass --username-only')
+# config.bind('<,><p><l>', 'spawn --userscript qute-pass --password-only')
+# config.bind('<,><o><l>', 'spawn --userscript qute-pass --otp-only')
