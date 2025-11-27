@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in *.webm; do
+    printf "Converting  $i\n"
+   # ffmpeg -i "$i" -c copy  "$i".mp4
+    ffmpeg -i "$i" -c:v libxvid -c:a mp3 "$i".avi
+done

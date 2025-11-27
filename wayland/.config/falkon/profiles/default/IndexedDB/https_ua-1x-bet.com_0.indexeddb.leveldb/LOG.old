@@ -1,8 +1,0 @@
-2021/01/15-18:41:10.087 359c Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_ua-1x-bet.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/01/15-18:41:10.087 359c Recovering log #13
-2021/01/15-18:41:10.088 359c Reusing old log /home/ll/.config/falkon/profiles/default/IndexedDB/https_ua-1x-bet.com_0.indexeddb.leveldb/000013.log 
-2021/01/15-18:42:24.319 33c3 Level-0 table #17: started
-2021/01/15-18:42:24.320 33c3 Level-0 table #17: 0 bytes OK
-2021/01/15-18:42:24.355 33c3 Delete type=0 #13
-2021/01/15-18:42:24.355 33c3 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2021/01/15-18:42:24.355 33c3 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

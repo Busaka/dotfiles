@@ -1,5 +1,0 @@
-2021/01/25-15:47:55.510 22da Reusing MANIFEST /home/ll/.config/falkon/profiles/default/IndexedDB/https_www.techradar.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/01/25-15:49:56.435 152a Level-0 table #5: started
-2021/01/25-15:49:56.491 152a Level-0 table #5: 5683 bytes OK
-2021/01/25-15:49:56.520 152a Delete type=0 #3
-2021/01/25-15:49:56.520 152a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+# Check if scrcpy is currently running
+if pgrep "scrcpy" > /dev/null
+then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)" # A slightly safer way to set it
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" # Assuming standard path
+    echo "scrcpy is running. Killing it."
+    notify-send "scrcpy is running. Killing it."
+    # Use pkill to terminate the process
+    pkill "scrcpy"
+else
+    echo "scrcpy is not running."
+    notify-send "scrcpy is not running."
+fi

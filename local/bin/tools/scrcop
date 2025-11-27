@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export XDG_RUNTIME_DIR="/run/user/$(id -u)" # A slightly safer way to set it
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" # Assuming standard path
+export SDL_VIDEODRIVER=wayland
+echo "Starting scrcpy(Neon-Ray-Ultra)."
+notify-send "Starting scrcpy(Neon-Ray-Ultra)."
+# Start scrcpy(Neon-Ray-Ultra)  in the background
+scrcpy  -Sw -m800 -s BF32ETYQ231025079103 &
+

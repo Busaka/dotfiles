@@ -1,0 +1,84 @@
+#!/bin/bash
+
+
+
+# Define the dialog window title and text
+TITLE="Wireless scrcpy details"
+TEXT="Please enter ip address and port bellow:"
+
+# Define the fields using --field="Label:Type"
+# Field 1: Name (Text Input)
+#NAME_FIELD="Full Name:TXT"
+
+# Field 2: Age (Numeric Input, default value 18, range 10-100)
+IP_ADDRESS_FIELD="Ip Address:NUM()"
+PORT_FIELD="Port:NUM()"
+PREVIOUS_CREDS_FIELD="Use previous credentials:CHK"
+
+# Field 3: Favorite Color (Combo Box with predefined options)
+#COLOR_FIELD="Favorite Color:CB!Red!Green!Blue!Yellow"
+
+# Field 4: Checkbox (initial state is unchecked)
+#AGREE_FIELD="I agree to terms:CHK"
+
+# Execute the yad command and capture the output
+USER_DATA=$(yad \
+    --title="$TITLE" \
+    --text="$TEXT" \
+    --form \
+    --item-separator='|' \
+    --field="$IP_ADDRESS_FIELD" \
+    --field="$PORT_FIELD" \
+    --field="$PREVIOUS_CREDS_FIELD" \
+)
+
+# Check if the user clicked OK (Exit status 0)
+if [ $? -eq 0 ]; then
+    # The output from yad is a single string with fields separated by the item-separator (here '|')
+    # Use IFS (Internal Field Separator) and 'read' to parse the string into individual variables
+    IFS='|' read -r IP_ADDRESS PORT PREVIOUS_CREDS <<< "$USER_DATA"
+
+    echo "--- Form Submitted ---"
+    echo "IP_ADDRESS: $IP_ADDRESS"
+    echo "PORT: $PORT"
+    echo "PREVIOUS CREDENTIALS: $PREVIOUS_CREDS"
+	if [[ "${PREVIOUS_CREDS,,}" == "true" ]]; then
+		ip_adress="ip_adress.txt"
+		port="port.txt"
+		# Reads the whole file at once
+		ip=$(<"$ip_adress")
+		port=$(<"$port")
+                echo "IP_ADDR: $ip"
+                echo "PORT: $port"
+		export XDG_RUNTIME_DIR="/run/user/$(id -u)" # A slightly safer way to set it
+		export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" # Assuming standard path
+		export SDL_VIDEODRIVER=wayland
+		echo "Starting scrcpy(Neon-Wireless)."
+		notify-send "Starting scrcpy(Neon-Wireless)."
+		# Start scrcpy(Neon-Ray-Ultra)  in the background
+		#scrcpy  -Sw -m800 -s BF32ETYQ231025079103 &
+		adb connect $ip:$port
+
+		sleep 2
+
+		scrcpy  -Sw -m800 -b 64M --tcpip=$ip:$port &
+	else
+                echo $IP_ADDRESS > ip_adress.txt
+                echo $PORT > port.txt
+		export XDG_RUNTIME_DIR="/run/user/$(id -u)" # A slightly safer way to set it
+		export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" # Assuming standard path
+		export SDL_VIDEODRIVER=wayland
+		echo "Starting scrcpy(Neon-Wireless)."
+		notify-send "Starting scrcpy(Neon-Wireless)."
+		# Start scrcpy(Neon-Ray-Ultra)  in the background
+		#scrcpy  -Sw -m800 -s BF32ETYQ231025079103 &
+		adb connect $IP_ADDRESS:$PORT
+
+		sleep 2
+
+		scrcpy  -Sw -m800 -b 64M --tcpip=$IP_ADDRESS:$PORT &
+	fi
+
+else
+    echo "User cancelled the form."
+fi

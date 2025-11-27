@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if nm-applet is currently running
+if pgrep "nm-applet" > /dev/null
+then
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)" # A slightly safer way to set it
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus" # Assuming standard path
+    echo "Killing nm-applet."
+    #notify-send "NM-APPLET" "Killing nm-applet."
+    notify-send "Killing nm-applet."
+    # Use pkill to terminate the process
+    pkill "nm-applet"
+else
+    echo "Starting nm-applet."
+    #notify-send "NM-APPLET" "Starting nm-applet."
+    notify-send "Starting nm-applet."
+    # Start nm-applet in the background
+    nm-applet &
+fi

@@ -1,0 +1,5 @@
+export BROWSER=firefox
+export TERM=alacritty
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK_THEME=adw-gtk3-dark
+QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/
