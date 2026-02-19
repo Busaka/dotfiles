@@ -1,4 +1,5 @@
 #!/bin/bash
 
-qrencode --size 100 -o - "$@" | xclip -selection clipboard -t image/png
+#qrencode --size 100 -o - "$@" | xclip -selection clipboard -t image/png
+qrencode --size 100 -o - "$@" | wl-copy --type image/png
 #play ~/.bin/shutter.mp3

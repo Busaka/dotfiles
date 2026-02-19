@@ -59,7 +59,8 @@ binds {
     ALT+7                         hotkey-overlay-title="Run script: 720p.sh" { spawn-sh "720p.sh"; }
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: pcmanfm-qt" { spawn-sh "pcmanfm-qt"; }
+   // MOD+E                             hotkey-overlay-title="File Manager: pcmanfm-qt" { spawn-sh "pcmanfm-qt"; }
+    MOD+E                             hotkey-overlay-title="File Manager: thunar" { spawn-sh "thunar"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -73,6 +74,11 @@ binds {
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
 
+    // Increase brightness
+    "XF86MonBrightnessUp"   { spawn "brightnessctl" "set" "1%+"; }
+    
+    // Decrease brightness
+    "XF86MonBrightnessDown" { spawn "brightnessctl" "set" "1%-"; }
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
 
@@ -190,6 +196,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+    spawn-sh-at-startup "/home/ll/local_bin_path.sh"
     //spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
    // spawn-sh-at-startup "swww img /usr/share/wallpapers/cachyos-wallpapers/Skyscraper.png" // Set wallpaper
    spawn-sh-at-startup "waybar" // Launch waybar
@@ -377,6 +384,12 @@ window-rule {
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
 	QT_QPA_PLATFORMTHEME "qt5ct"
+        LIBVIRT_DEFAULT_URI "qemu:///system"
+	EDITOR "nvim"
+	BROWSER "qutebrowser"
+	READER "zathura"
+	VIDEO "mpv"
+	IMAGE "imv"
     }
 
     hotkey-overlay {
